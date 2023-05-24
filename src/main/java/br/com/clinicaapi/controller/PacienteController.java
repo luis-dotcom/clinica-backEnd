@@ -41,13 +41,6 @@ public class PacienteController {
 		return ResponseEntity.ok().body(paciente);
 	}
 
-	@GetMapping("/cpf={cpf}")
-	@Operation(summary = "Buscar Paciente por cpf")
-	public ResponseEntity<Optional<Paciente>> buscarPacientePorCpf(@PathVariable String cpf) {
-		Optional<Paciente> paciente = pacienteRepository.findByCpf(cpf);
-		return ResponseEntity.ok().body(paciente);
-	}
-
 	@GetMapping
 	@Operation(summary = "Listar Pacientes")
 	public List<PacienteDto> listarPacientes() {

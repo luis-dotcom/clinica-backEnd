@@ -41,6 +41,13 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(usuario);
 	}
 
+	@GetMapping("/senha/{senha}")
+	@Operation(summary = "Buscar Usuário por Senha")
+	public ResponseEntity<Optional<Usuario>> buscarusuarioPorSenha(@PathVariable String senha) {
+		Optional<Usuario> usuario = usuarioRepository.findBySenha(senha);
+		return ResponseEntity.ok().body(usuario);
+	}
+
 	@GetMapping
 	@Operation(summary = "Listar Usuários")
 	public List<UsuarioDto> listarUsuario() {

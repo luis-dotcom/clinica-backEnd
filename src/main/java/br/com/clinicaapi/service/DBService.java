@@ -76,14 +76,15 @@ public class DBService {
 		paciente1.getConsultas().addAll(Arrays.asList(consulta1, consulta2, consulta6));
 		paciente2.getConsultas().addAll(Arrays.asList(consulta3, consulta4, consulta5));
 
-		Usuario usuario1 = new Usuario(null, "1111", "clare", "ADMIM", "12365478952", "rua 01","clare@.com", "1111");
+		Usuario usuario0 = new Usuario(null, "0001", "admin", "ADMIN", "00000000000", "admin","admin", "admin");
+		Usuario usuario1 = new Usuario(null, "1111", "clare", "ADMIN", "12365478952", "rua 01","clare@clare.com", "1111");
 		Usuario usuario2 = new Usuario(null, "2222", "leon", "ALUNO", "12365587996", "rua 02","leon@.com", "2222");
-		Usuario usuario3 = new Usuario(null, "3333", "ada", "RECEP", "12387965236", "rua 03", "ada@.com","3333");
-		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2, usuario3));
+		Usuario usuario3 = new Usuario(null, "3333", "ada", "RECEPCIONISTA", "12387965236", "rua 03", "ada@.com","3333");
+		usuarioRepository.saveAll(Arrays.asList(usuario0, usuario1, usuario2, usuario3));
 		
-		Aluno aluno1 = new Aluno(null, "1114", "jone", "Aluno", "12547896521", "rua 20", "jone@jone.com", "4444", "nutricao");
-		Aluno aluno2 = new Aluno(null, "1112", "jax", "Aluno", "12547896532", "rua 21", "jax@jax.com", "4444", "nutricao");
-		Aluno aluno3 = new Aluno(null, "1113", "sub zero", "Aluno", "12547896543", "rua 22", "subzero@subzero.com", "4444", "nutricao");
+		Aluno aluno1 = new Aluno(null, "1114", "jone", "ALUNO", "12547896521", "rua 20", "jone@jone.com", "4444", "nutricao");
+		Aluno aluno2 = new Aluno(null, "1112", "jax", "ALUNO", "12547896532", "rua 21", "jax@jax.com", "5555", "nutricao");
+		Aluno aluno3 = new Aluno(null, "1113", "sub zero", "ALUNO", "12547896543", "rua 22", "subzero@subzero.com", "6666", "nutricao");
 		alunoRepository.saveAll(Arrays.asList(aluno1,aluno2,aluno3));
 		
 		Especialidade especialidade1 = new Especialidade(null, "Enfermagem", "Enfermagem");
