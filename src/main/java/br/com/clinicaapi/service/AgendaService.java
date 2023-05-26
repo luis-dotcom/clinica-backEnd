@@ -33,6 +33,7 @@ public class AgendaService {
 	// criar
 	public Agenda criarAgenda(Agenda agenda) {
 		agenda.setId(null);
+		agenda.setPresenca(true);
 		return agendaRepository.save(agenda);
 	}
 
@@ -45,6 +46,7 @@ public class AgendaService {
 		agenda.setFone(agendaDto.getFone());
 		agenda.setEspecialidade(agendaDto.getEspecialidade());
 		agenda.setNomeAluno(agendaDto.getNomeAluno());
+		agenda.setPresenca(agendaDto.isPresenca());
 
 		return agendaRepository.save(agenda);
 	}

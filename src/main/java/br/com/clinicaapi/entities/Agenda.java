@@ -37,4 +37,6 @@ public class Agenda {
 	private String especialidade;
 
 	private String nomeAluno;
+	
+	private boolean presenca;
 }

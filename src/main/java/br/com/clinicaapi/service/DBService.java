@@ -54,10 +54,10 @@ public class DBService {
 		Fila fila4 = new Fila(null, "Jack", "4");
 		filaRepository.saveAll(Arrays.asList(fila1, fila2, fila3, fila4));
 
-		Agenda agenda1 = new Agenda(null, "pedro", "12456874526", "2023-02-25", "11 236547895", "Nutrição","jeorge");
-		Agenda agenda2 = new Agenda(null, "joao", "80054621378", "2023-02-19", "81 2365878546", "Enfermagem", "carla");
-		Agenda agenda3 = new Agenda(null, "inacio", "00125480365", "2023-02-18", "87 456325987", "Fisioterapia", "jonh");
-		Agenda agenda4 = new Agenda(null, "joana", "45201587965", "2023-02-28", "83 256987452", "Fisioterapia", "maike");
+		Agenda agenda1 = new Agenda(null, "pedro", "12456874526", "2023-02-25", "11 236547895", "Nutrição","jeorge", true);
+		Agenda agenda2 = new Agenda(null, "joao", "80054621378", "2023-02-19", "81 2365878546", "Enfermagem", "carla", true);
+		Agenda agenda3 = new Agenda(null, "inacio", "00125480365", "2023-02-18", "87 456325987", "Fisioterapia", "jonh", true);
+		Agenda agenda4 = new Agenda(null, "joana", "45201587965", "2023-02-28", "83 256987452", "Fisioterapia", "maike", true);
 		agendaRepository.saveAll(Arrays.asList(agenda1, agenda2, agenda3, agenda4));
 
 		Paciente paciente1 = new Paciente(null, "jose", "1989-01-13", "81984661549", "@yahoo.com", "12345678901","masculino", "dona maria", "limoeiro", "rua joaquim nabuco", "caruaru", 30);
