@@ -25,6 +25,7 @@ public class Agenda {
 	@NotEmpty(message = "Campo NOME é requerido!")
 	private String nome;
 
+	@NotEmpty(message = "Campo CPF é requerido!")
 	private String cpf;
 
 	@NotEmpty(message = "Campo DATA é requerido!")
@@ -38,5 +39,4 @@ public class Agenda {
 
 	private String nomeAluno;
 	
-	private boolean presenca;
 }

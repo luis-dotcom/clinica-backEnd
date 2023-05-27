@@ -21,7 +21,7 @@ public class PacienteDto {
 	private String nomeMae;
 	private String naturalidade;
 	private String cidade;
-	private int idade;
+	private String idade;
 
 	public PacienteDto(Paciente paciente) {
 		this.id = paciente.getId();

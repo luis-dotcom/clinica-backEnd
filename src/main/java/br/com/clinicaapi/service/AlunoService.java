@@ -47,6 +47,7 @@ public class AlunoService {
 		aluno.setEmail(alunoDto.getEmail());
 		aluno.setSenha(alunoDto.getSenha());
 		aluno.setCurso(alunoDto.getCurso());
+		aluno.setTelefone(alunoDto.getTelefone());
 
 		return alunoRepository.save(aluno);
 	}

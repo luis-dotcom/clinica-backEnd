@@ -19,6 +19,7 @@ public class AlunoDto {
 	private String email;
 	private String senha;
 	private String curso;
+	private String telefone;
 
 	public AlunoDto(Aluno aluno) {
 		this.id = aluno.getId();
@@ -30,5 +31,6 @@ public class AlunoDto {
 		this.email = aluno.getEmail();
 		this.senha = aluno.getSenha();
 		this.curso = aluno.getCurso();
+		this.telefone = aluno.getTelefone();
 	}
 }

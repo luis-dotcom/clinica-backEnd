@@ -46,6 +46,7 @@ public class UsuarioService {
 		usuario.setEndereco(usuarioDto.getEndereco());
 		usuario.setEmail(usuarioDto.getEmail());
 		usuario.setSenha(usuarioDto.getSenha());
+		usuario.setTelefone(usuarioDto.getTelefone());
 
 		return usuarioRepository.save(usuario);
 	}

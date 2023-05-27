@@ -44,15 +44,17 @@ public class Usuario implements Serializable {
 	@Length(min = 11, max = 11)
 	private String cpf;
 
-	@NotEmpty(message = "Campo ENDEREÇO é requerido!")
 	private String endereco;
 	
-	@NotEmpty(message = "Campo Email é requerido!")
+	@NotEmpty(message = "Campo TELEFONE é requerido!")
+	private String telefone;
+	
+	@NotEmpty(message = "Campo EMAIL é requerido!")
 	@Column(unique = true)
 	private String email;
 
 	@NotEmpty(message = "Campo SENHA é requerido!")
-	@Length(min = 4, max = 10)
+	@Length(min = 4, max = 50)
 	private String senha;
 
 }

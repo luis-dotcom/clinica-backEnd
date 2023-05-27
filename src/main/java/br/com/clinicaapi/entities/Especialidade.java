@@ -27,7 +27,7 @@ public class Especialidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty
+	@NotEmpty(message = "O Campo é requerido!")
 	@Column(unique = true)
 	private String valor;
 	

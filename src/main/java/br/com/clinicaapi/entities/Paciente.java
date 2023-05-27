@@ -55,19 +55,19 @@ public class Paciente implements Serializable {
 	@NotEmpty(message = "Campo NATURALIDADE é requerido!")
 	private String naturalidade;
 
-	@NotEmpty(message = "Campo ENDEREÇO é requerido!")
 	private String endereco;
 	
 	@NotEmpty(message = "Campo CIDADE é requerido!")
 	private String cidade;
 
-	private int idade;
+	@NotEmpty(message = "Campo IDADE é requerido!")
+	private String idade;
 
 	@OneToMany(mappedBy = "paciente")
 	private List<Consulta> consultas = new ArrayList<>();
 
 	public Paciente(Long id, String nome, String dataNascimento, String telefone, String email, String cpf, String sexo,
-			String nomeMae, String naturalidade, String endereco, String cidade, int idade) {
+			String nomeMae, String naturalidade, String endereco, String cidade, String idade) {
 		super();
 		this.id = id;
 		this.nome = nome;

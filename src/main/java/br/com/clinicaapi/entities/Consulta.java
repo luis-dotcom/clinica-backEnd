@@ -36,19 +36,17 @@ public class Consulta implements Serializable {
 	@NotEmpty(message = "Campo NOME ATENDENTE é requerido!")
 	private String nomeAtendente;
 	
-    @NotEmpty(message = "Campo QUEIXAS é requerido!")
-	private String queixas;
+    private String queixas;
 
-	@NotEmpty(message = "Campo PLANO é requerido!")
 	private String plano;
 
-	@NotEmpty(message = "Campo AVALIAÇÃO é requerido!")
 	private String avaliacao;
 
 	private String exames;
 
 	private String encaminhamento;
-
+    
+	@NotEmpty(message = "Campo DATA é requerido!")
 	private String dataConsulta;
 	
 	private String observacao;
