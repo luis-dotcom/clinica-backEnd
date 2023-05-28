@@ -15,4 +15,8 @@ public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
 	@Query("SELECT obj FROM Consulta obj WHERE obj.paciente.id = :id_consulta ORDER BY queixas")
 	List<Consulta> findByIdConsulta(@Param(value = "id_consulta") Long id_consulta);
 
+
+	@Query("SELECT obj FROM Consulta obj WHERE obj.paciente.cpf = :id_consulta ORDER BY queixas")
+	List<Consulta> findByCpfConsulta(@Param(value = "id_consulta") String cpf_paciente);
+
 }

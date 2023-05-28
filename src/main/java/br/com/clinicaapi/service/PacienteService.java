@@ -24,6 +24,13 @@ public class PacienteService {
 		return paciente.orElseThrow(() -> new ObjectNotFoundException(
 				"Paciente não encontrado! ID:" + id + " Tipo: " + Paciente.class.getName(), null));
 	}
+	
+	// buscar por id
+		public Paciente findByCpf(String cpf) {
+			Optional<Paciente> paciente = pacienteRepository.findByCpf(cpf);
+			return paciente.orElseThrow(() -> new ObjectNotFoundException(
+					"Paciente não encontrado! CPF:" + cpf + " Tipo: " + Paciente.class.getName(), null));
+		}
 
 	// listar
 	public static List<PacienteDto> listarPacientes(List<Paciente> paciente) {
@@ -58,4 +65,5 @@ public class PacienteService {
 		findById(id);
 		pacienteRepository.deleteById(id);
 	}
+
 }

@@ -39,7 +39,7 @@ public class ConsultaController {
 
 	@GetMapping("/{id}")
 	@Operation(summary = "Buscar Consulta")
-	public ResponseEntity<Optional<Consulta>> buscarLivro(@PathVariable Long id) {
+	public ResponseEntity<Optional<Consulta>> buscarConsulta(@PathVariable Long id) {
 		Optional<Consulta> consulta = consultaRepository.findById(id);
 		return ResponseEntity.ok().body(consulta);
 	}
@@ -51,12 +51,23 @@ public class ConsultaController {
 		return ConsultaService.listarTodasConsultas(consultas);
 	}
 
-	@GetMapping
-	// localhost:8086/consultas?cliente=1
+	@GetMapping("id")
+	// localhost:8086/consultas/id?cliente=1
 	@Operation(summary = "Listar Consultas Por Cliente passando ID")
 	public ResponseEntity<List<ConsultaDto>> listarConsultasPorClientes(
 			@RequestParam(value = "cliente", defaultValue = "0") Long id_cliente) {
 		List<Consulta> listaConsultas = consultaService.listarConsultaPorPacientes(id_cliente);
+		List<ConsultaDto> listaConsultasDto = listaConsultas.stream().map(ConsultaDto::new)
+				.collect(Collectors.toList());
+		return ResponseEntity.ok().body(listaConsultasDto);
+	}
+	
+	@GetMapping
+	// localhost:8086/consultas?cliente=1
+	@Operation(summary = "Listar Consultas Por Cliente passando CPF")
+	public ResponseEntity<List<ConsultaDto>> listarConsultasPorClientesCPF(
+			@RequestParam(value = "cliente", defaultValue = "0") String cpf_cliente) {
+		List<Consulta> listaConsultas = consultaService.listarConsultaPorPacientesCPF(cpf_cliente);
 		List<ConsultaDto> listaConsultasDto = listaConsultas.stream().map(ConsultaDto::new)
 				.collect(Collectors.toList());
 		return ResponseEntity.ok().body(listaConsultasDto);

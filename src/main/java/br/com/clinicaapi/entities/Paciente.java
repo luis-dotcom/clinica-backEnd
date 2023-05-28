@@ -65,6 +65,9 @@ public class Paciente implements Serializable {
 
 	@OneToMany(mappedBy = "paciente")
 	private List<Consulta> consultas = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "paciente")
+	private List<Agenda> agendas = new ArrayList<>();
 
 	public Paciente(Long id, String nome, String dataNascimento, String telefone, String email, String cpf, String sexo,
 			String nomeMae, String naturalidade, String endereco, String cidade, String idade) {

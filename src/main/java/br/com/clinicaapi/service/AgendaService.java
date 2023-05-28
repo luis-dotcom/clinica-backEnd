@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.clinicaapi.dto.AgendaDto;
 import br.com.clinicaapi.entities.Agenda;
+import br.com.clinicaapi.entities.Paciente;
 import br.com.clinicaapi.repository.AgendaRepository;
 
 @Service
@@ -18,11 +19,19 @@ public class AgendaService {
 	@Autowired
 	private AgendaRepository agendaRepository;
 
+	@Autowired
+	private PacienteService pacienteService;
+
 	// buscar por id
 	public Agenda findById(Long id) {
 		Optional<Agenda> cliente = agendaRepository.findById(id);
 		return cliente.orElseThrow(() -> new ObjectNotFoundException(
 				"Agendamento não encontrado! ID:" + id + " Tipo: " + Agenda.class.getName(), null));
+	}
+
+	public List<Agenda> listarAgendaPorPacientes(Long id_paciente) {
+		pacienteService.findById(id_paciente);
+		return agendaRepository.findByIdAgenda(id_paciente);
 	}
 
 	// listar
@@ -31,8 +40,11 @@ public class AgendaService {
 	}
 
 	// criar
-	public Agenda criarAgenda(Agenda agenda) {
+
+	public Agenda criarAgenda(Long id_paciente, Agenda agenda) {
 		agenda.setId(null);
+		Paciente paciente = pacienteService.findById(id_paciente);
+		agenda.setPaciente(paciente);
 		return agendaRepository.save(agenda);
 	}
 

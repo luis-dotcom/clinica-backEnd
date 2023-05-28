@@ -27,6 +27,7 @@ public class DBService {
 	@Autowired
 	private ConsultaRepository consultaRepository;
 
+	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
@@ -48,6 +49,7 @@ public class DBService {
 		Fila fila3 = new Fila(null, "Mendonça", "3");
 		Fila fila4 = new Fila(null, "Jack", "4");
 		filaRepository.saveAll(Arrays.asList(fila1, fila2, fila3, fila4));
+		
 
 		Paciente paciente1 = new Paciente(null, "jose", "1989-01-13", "81984661549", "@yahoo.com", "12345678901","masculino", "dona maria", "limoeiro", "rua joaquim nabuco", "caruaru","30");
 		Paciente paciente2 = new Paciente(null, "firmino", "1987-02-14", "84661549", "@gmail.com", "23658974120","masculino", "severina bio", "carpina", "rua cristovao ribeiro de lemos", "são paulo", "31");
@@ -67,7 +69,7 @@ public class DBService {
 
 		Usuario usuario0 = new Usuario(null, "0001", "admin", "ADMIN", "00000000000", "admin","12547885","admin","admin");
 		Usuario usuario1 = new Usuario(null, "1111", "clare", "ADMIN", "12365478952", "rua 01","8185696524","clare@clare.com", "1111");
-		Usuario usuario2 = new Usuario(null, "2222", "leon", "ALUNO", "12365587996", "rua 02","8184569885","leon@.com", "2222");
+		Usuario usuario2 = new Usuario(null, "2222", "leon", "RECEPCIONISTA", "12365587996", "rua 02","8184569885","leon@.com", "2222");
 		Usuario usuario3 = new Usuario(null, "3333", "ada", "RECEPCIONISTA", "12387965236", "rua 03","8173658985", "ada@.com","3333");
 		usuarioRepository.saveAll(Arrays.asList(usuario0, usuario1, usuario2, usuario3));
 		

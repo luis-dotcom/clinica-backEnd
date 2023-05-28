@@ -2,6 +2,7 @@ package br.com.clinicaapi.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.clinicaapi.dto.AgendaDto;
@@ -42,17 +44,29 @@ public class AgengaController {
 	}
 
 	@GetMapping
+	// localhost:8086/agenda?cliente=1
+	@Operation(summary = "Listar Agendas Por Cliente passando ID")
+	public ResponseEntity<List<AgendaDto>> listarAgendasPorClientes(
+			@RequestParam(value = "cliente", defaultValue = "0") Long id_cliente) {
+		List<Agenda> listaAgendas = agendaService.listarAgendaPorPacientes(id_cliente);
+		List<AgendaDto> listaAgendasDto = listaAgendas.stream().map(AgendaDto::new).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listaAgendasDto);
+	}
+
+	@PostMapping
+	// localhost:8086/agenda?cliente=1
+	@Operation(summary = "Cadastrar Agenda")
+	public ResponseEntity<Agenda> cadastrarAgenda(@RequestParam(value = "cliente", defaultValue = "0") Long id_cliente,
+			@Valid @RequestBody Agenda agenda) {
+		Agenda novaAgenda = agendaService.criarAgenda(id_cliente, agenda);
+		return ResponseEntity.ok().body(novaAgenda);
+	}
+
+	@GetMapping("/todas")
 	@Operation(summary = "Listar Agendas")
 	public List<AgendaDto> listarAgendas() {
 		List<Agenda> agendas = agendaRepository.findAllDesc();
 		return AgendaService.listarAgendas(agendas);
-	}
-
-	@PostMapping
-	@Operation(summary = "Cadastrar Agenda")
-	public ResponseEntity<Agenda> cadastrarAgenda(@Valid @RequestBody Agenda agenda) {
-		agenda = agendaService.criarAgenda(agenda);
-		return ResponseEntity.ok().body(agenda);
 	}
 
 	@PutMapping("/{id}")
@@ -68,7 +82,7 @@ public class AgengaController {
 		agendaService.deleteAgenda(id);
 		return ResponseEntity.ok().build();
 	}
-	
+
 	@GetMapping("/quantidade")
 	@Operation(summary = "Quantidade de Agendados")
 	public int valorTotalAgendas() {

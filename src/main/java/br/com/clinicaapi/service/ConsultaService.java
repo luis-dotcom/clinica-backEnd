@@ -33,6 +33,11 @@ public class ConsultaService {
 		pacienteService.findById(id_paciente);
 		return consultaRepository.findByIdConsulta(id_paciente);
 	}
+	
+	public List<Consulta> listarConsultaPorPacientesCPF(String cpf_paciente) {
+		pacienteService.findByCpf(cpf_paciente);
+		return consultaRepository.findByCpfConsulta(cpf_paciente);
+	}
 
 	// listar
 	public static List<ConsultaDto> listarTodasConsultas(List<Consulta> consulta) {
@@ -69,4 +74,6 @@ public class ConsultaService {
 		findById(id);
 		consultaRepository.deleteById(id);
 	}
+
+	
 }
