@@ -35,9 +35,16 @@ public class PacienteController {
 	private PacienteService pacienteService;
 
 	@GetMapping("/{id}")
-	@Operation(summary = "Buscar Paciente")
+	@Operation(summary = "Buscar Paciente por ID")
 	public ResponseEntity<Optional<Paciente>> buscarPacientePorId(@PathVariable Long id) {
 		Optional<Paciente> paciente = pacienteRepository.findById(id);
+		return ResponseEntity.ok().body(paciente);
+	}
+	
+	@GetMapping("/cpf={cpf}")
+	@Operation(summary = "Buscar Paciente por CPF")
+	public ResponseEntity<Optional<Paciente>> buscarPacientePorCPF(@PathVariable String cpf) {
+		Optional<Paciente> paciente = pacienteRepository.findByCpf(cpf);
 		return ResponseEntity.ok().body(paciente);
 	}
 
