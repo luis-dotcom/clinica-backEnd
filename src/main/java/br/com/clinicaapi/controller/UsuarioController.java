@@ -41,10 +41,10 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(usuario);
 	}
 
-	@GetMapping("/senha/{senha}")
-	@Operation(summary = "Buscar Usuário por Senha")
-	public ResponseEntity<Optional<Usuario>> buscarusuarioPorSenha(@PathVariable String senha) {
-		Optional<Usuario> usuario = usuarioRepository.findBySenha(senha);
+	@GetMapping("/email/{email}")
+	@Operation(summary = "Buscar Usuário por Email")
+	public ResponseEntity<Optional<Usuario>> buscarusuarioPorEmail(@PathVariable String email) {
+		Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
 		return ResponseEntity.ok().body(usuario);
 	}
 

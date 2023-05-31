@@ -15,5 +15,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	@Query(nativeQuery = true, value = "Select * from usuario order by id desc;")
 	List<Usuario> findAllDesc();
 
-	Optional<Usuario> findBySenha(String senha);
+	Optional<Usuario> findByEmail(String email);
 }
