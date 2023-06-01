@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.clinicaapi.service.DBService;
-
 @Configuration
 @Profile("dev")
 public class DevConfig {
@@ -15,7 +13,7 @@ public class DevConfig {
 	private DBService dbService;
 
 	@Bean
-	public void instaciaDeDados() {
+	public void instaciaBaseDeDados() {
 		this.dbService.instaciaBaseDeDados();
 	}
 }

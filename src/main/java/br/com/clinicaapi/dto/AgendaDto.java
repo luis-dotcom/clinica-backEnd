@@ -26,6 +26,5 @@ public class AgendaDto {
 		this.fone = agenda.getFone();
 		this.especialidade = agenda.getEspecialidade();
 		this.nomeAluno = agenda.getNomeAluno();
-	
 	}
 }

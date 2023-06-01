@@ -5,17 +5,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.clinicaapi.service.DBService;
-
 @Configuration
-@Profile("test")
-public class TestConfig {
+@Profile("prod")
+public class ProdConfig {
 
 	@Autowired
 	private DBService dbService;
 
 	@Bean
-	public void instaciaBaseDeDados() {
+	public void instaciaDeDados() {
 		this.dbService.instaciaBaseDeDados();
 	}
 }

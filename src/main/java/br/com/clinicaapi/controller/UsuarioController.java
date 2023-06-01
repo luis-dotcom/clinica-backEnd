@@ -43,7 +43,7 @@ public class UsuarioController {
 
 	@GetMapping("/email/{email}")
 	@Operation(summary = "Buscar Usuário por Email")
-	public ResponseEntity<Optional<Usuario>> buscarusuarioPorEmail(@PathVariable String email) {
+	public ResponseEntity<Optional<Usuario>> buscarUsuarioPorEmail(@PathVariable String email) {
 		Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
 		return ResponseEntity.ok().body(usuario);
 	}

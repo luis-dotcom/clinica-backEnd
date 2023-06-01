@@ -34,8 +34,8 @@ public class FilaController {
 	private FilaService filaService;
 
 	@GetMapping("/{id}")
-	@Operation(summary = "Buscar Fila")
-	public ResponseEntity<Optional<Fila>> buscarFila(@PathVariable Long id) {
+	@Operation(summary = "Buscar na Fila por ID")
+	public ResponseEntity<Optional<Fila>> buscarNaFilaPorId(@PathVariable Long id) {
 		Optional<Fila> fila = filaRepository.findById(id);
 		return ResponseEntity.ok().body(fila);
 	}
@@ -55,7 +55,7 @@ public class FilaController {
 	}
 
 	@DeleteMapping("/{id}")
-	@Operation(summary = "Deletar Fila")
+	@Operation(summary = "Deletar da Fila")
 	public ResponseEntity<?> deletarFila(@PathVariable Long id) {
 		filaService.deleteFila(id);
 		return ResponseEntity.ok().build();
@@ -63,7 +63,7 @@ public class FilaController {
 
 	@GetMapping("/quantidade")
 	@Operation(summary = "Quantidade na Fila")
-	public int valorTotalAgendas() {
+	public int valorTotalNaFila() {
 		int valorTotal = filaRepository.findByQuantidadeFila();
 		return valorTotal;
 	}
