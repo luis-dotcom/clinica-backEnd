@@ -21,7 +21,7 @@ public class PacienteDto {
 	private String nomeMae;
 	private String naturalidade;
 	private String cidade;
-	private String idade;
+	private String bairro;
 
 	public PacienteDto(Paciente paciente) {
 		this.id = paciente.getId();
@@ -35,6 +35,6 @@ public class PacienteDto {
 		this.naturalidade = paciente.getNaturalidade();
 		this.endereco = paciente.getEndereco();
 		this.cidade = paciente.getCidade();
-		this.idade = paciente.getIdade();
+		this.bairro = paciente.getBairro();
 	}
 }

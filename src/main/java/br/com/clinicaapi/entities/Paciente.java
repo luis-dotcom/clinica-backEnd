@@ -60,8 +60,8 @@ public class Paciente implements Serializable {
 	@NotEmpty(message = "Campo CIDADE é requerido!")
 	private String cidade;
 
-	@NotEmpty(message = "Campo IDADE é requerido!")
-	private String idade;
+	@NotEmpty(message = "Campo BAIRRO é requerido!")
+	private String bairro;
 
 	@OneToMany(mappedBy = "paciente")
 	private List<Consulta> consultas = new ArrayList<>();
@@ -70,7 +70,7 @@ public class Paciente implements Serializable {
 	private List<Agenda> agendas = new ArrayList<>();
 
 	public Paciente(Long id, String nome, String dataNascimento, String telefone, String email, String cpf, String sexo,
-			String nomeMae, String naturalidade, String endereco, String cidade, String idade) {
+			String nomeMae, String naturalidade, String endereco, String cidade, String bairro) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -83,7 +83,7 @@ public class Paciente implements Serializable {
 		this.naturalidade = naturalidade;
 		this.endereco = endereco;
 		this.cidade = cidade;
-		this.idade = idade;
+		this.bairro = bairro;
 	}
 
 }

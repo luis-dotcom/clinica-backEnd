@@ -51,9 +51,9 @@ public class DBService {
 		filaRepository.saveAll(Arrays.asList(fila1, fila2, fila3, fila4));
 		
 
-		Paciente paciente1 = new Paciente(null, "jose", "1989-01-13", "81984661549", "@yahoo.com", "12345678901","masculino", "dona maria", "limoeiro", "rua joaquim nabuco", "caruaru","30");
-		Paciente paciente2 = new Paciente(null, "firmino", "1987-02-14", "84661549", "@gmail.com", "23658974120","masculino", "severina bio", "carpina", "rua cristovao ribeiro de lemos", "são paulo", "31");
-		Paciente paciente3 = new Paciente(null, "maria", "1970-05-25", "81991218547", "@hotmail.com", "69854712365","feminino", "dona tereza", "sao paulo", "rua pinto lapa", "carpina", "32");
+		Paciente paciente1 = new Paciente(null, "jose", "1989-01-13", "81984661549", "@yahoo.com", "12345678901","masculino", "dona maria", "limoeiro", "rua joaquim nabuco", "caruaru","centro");
+		Paciente paciente2 = new Paciente(null, "firmino", "1987-02-14", "84661549", "@gmail.com", "23658974120","masculino", "severina bio", "carpina", "rua cristovao ribeiro de lemos", "são paulo", "sao paulo");
+		Paciente paciente3 = new Paciente(null, "maria", "1970-05-25", "81991218547", "@hotmail.com", "69854712365","feminino", "dona tereza", "sao paulo", "rua pinto lapa", "carpina", "novo");
 		pacienteRepository.saveAll(Arrays.asList(paciente1, paciente2, paciente3));
 		
 		Consulta consulta1 = new Consulta(null, "111", "wesker", "dor de cabeça", "dipirona", "leve", "unidade mista", "nao se aplica","1989-01-13","observacao", paciente1);

@@ -55,7 +55,7 @@ public class PacienteService {
 		paciente.setSexo(pacienteDto.getSexo());
 		paciente.setNomeMae(pacienteDto.getNomeMae());
 		paciente.setNaturalidade(pacienteDto.getNaturalidade());
-		paciente.setIdade(pacienteDto.getIdade());
+		paciente.setBairro(pacienteDto.getBairro());
 
 		return pacienteRepository.save(paciente);
 	}

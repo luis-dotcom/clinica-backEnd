@@ -54,7 +54,6 @@ public class Usuario implements Serializable {
 	private String email;
 
 	@NotEmpty(message = "Campo SENHA é requerido!")
-	@Length(min = 4, max = 50)
 	private String senha;
 
 }

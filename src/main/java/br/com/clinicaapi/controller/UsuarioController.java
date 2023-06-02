@@ -33,6 +33,8 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+	
+
 
 	@GetMapping("/{id}")
 	@Operation(summary = "Buscar Usuário")
