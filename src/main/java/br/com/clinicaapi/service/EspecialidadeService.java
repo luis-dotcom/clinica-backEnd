@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.clinicaapi.dto.EspecialidadeDto;
-import br.com.clinicaapi.entities.Agenda;
 import br.com.clinicaapi.entities.Especialidade;
 import br.com.clinicaapi.repository.EspecialidadeRepository;
 
@@ -23,7 +22,7 @@ public class EspecialidadeService {
 	public Especialidade findById(Long id) {
 		Optional<Especialidade> especialidade = especialidadeRepository.findById(id);
 		return especialidade.orElseThrow(() -> new ObjectNotFoundException(
-				"Especialidade não encontrado! ID:" + id + " Tipo: " + Agenda.class.getName(), null));
+				"Especialidade não encontrado! ID:" + id + " Tipo: " + Especialidade.class.getName(), null));
 	}
 
 	// listar

@@ -39,6 +39,7 @@ public class DBService {
 	
 	@Autowired
 	private AlunoRepository alunoRepository;
+	
 
 	public void instaciaBaseDeDados() {
 
@@ -67,13 +68,13 @@ public class DBService {
 		paciente1.getConsultas().addAll(Arrays.asList(consulta1, consulta2, consulta6));
 		paciente2.getConsultas().addAll(Arrays.asList(consulta3, consulta4, consulta5));
 
-		Usuario usuario0 = new Usuario(null, "0001", "admin", "ADMIN", "00000000000", "admin","12547885","admin","admin");
-		Usuario usuario1 = new Usuario(null, "1111", "clare", "ADMIN", "12365478952", "rua 01","8185696524","clare@clare.com", "1111");
-		Usuario usuario2 = new Usuario(null, "2222", "leon", "RECEPCIONISTA", "12365587996", "rua 02","8184569885","leon@.com", "2222");
-		Usuario usuario3 = new Usuario(null, "3333", "ada", "RECEPCIONISTA", "12387965236", "rua 03","8173658985", "ada@.com","3333");
-		usuarioRepository.saveAll(Arrays.asList(usuario0, usuario1, usuario2, usuario3));
+		Usuario usuario = new Usuario(null, "0001", "admin", "ADMIN", "00000000000", "admin","12547885","admin","admin");
+		Usuario professor1 = new Usuario(null, "1111", "clare", "PROFESSOR", "12365478952", "rua 01","8185696524","professor", "professor");
+		Usuario professor2 = new Usuario(null, "2222", "leon", "PROFESSOR", "12365587996", "rua 02","8184569885","leon@.com", "2222");
+		Usuario recepcionista = new Usuario(null, "3333", "ada", "RECEPCIONISTA", "12387965236", "rua 03","8173658985", "recepcao","recepcao");
+		usuarioRepository.saveAll(Arrays.asList(usuario,professor1,professor2,recepcionista));
 		
-		Aluno aluno1 = new Aluno(null, "1114", "jone", "ALUNO", "12547896521", "rua 20", "8178456955","jone@jone.com","4444","enfermagem");
+		Aluno aluno1 = new Aluno(null, "1114", "jone", "ALUNO", "12547896521", "rua 20", "8178456955","aluno","aluno","enfermagem");
 		Aluno aluno2 = new Aluno(null, "1112", "jax", "ALUNO", "12547896532", "rua 21", "8197365874", "jax@jax.com", "5555","nutricao");
 		Aluno aluno3 = new Aluno(null, "1113", "sub zero", "ALUNO", "12547896543", "rua 22", "81956231478", "sub@sub.com", "77777","fisioterapia");
 		alunoRepository.saveAll(Arrays.asList(aluno1,aluno2,aluno3));
