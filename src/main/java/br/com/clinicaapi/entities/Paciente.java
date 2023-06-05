@@ -12,8 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-import org.hibernate.validator.constraints.Length;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,7 +41,6 @@ public class Paciente implements Serializable {
 	private String email;
 
 	@NotEmpty(message = "Campo CPF é requerido!")
-	@Length(min = 11, max = 11)
 	private String cpf;
 
 	@NotEmpty(message = "Campo SEXO é requerido!")

@@ -41,7 +41,6 @@ public class Usuario implements Serializable {
 	private String tipoPerfil;
 
 	@NotEmpty(message = "Campo CPF é requerido!")
-	@Length(min = 11, max = 11)
 	private String cpf;
 
 	private String endereco;
