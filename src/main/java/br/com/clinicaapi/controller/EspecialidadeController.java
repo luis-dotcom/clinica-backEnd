@@ -23,7 +23,7 @@ import br.com.clinicaapi.service.EspecialidadeService;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/especialidade")
 public class EspecialidadeController {
 

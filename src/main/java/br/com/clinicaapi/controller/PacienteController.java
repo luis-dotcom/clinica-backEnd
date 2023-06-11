@@ -24,7 +24,7 @@ import br.com.clinicaapi.service.PacienteService;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/paciente")
 public class PacienteController {
 
