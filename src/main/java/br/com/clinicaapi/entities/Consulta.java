@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -36,19 +38,25 @@ public class Consulta implements Serializable {
 	@NotEmpty(message = "Campo NOME ATENDENTE é requerido!")
 	private String nomeAtendente;
 	
+	@Length(min = 0, max = 1000)
     private String queixas;
 
+    @Length(min = 0, max = 1000)
 	private String plano;
 
+	@Length(min = 0, max = 1000)
 	private String avaliacao;
 
+	@Length(min = 0, max = 1000)
 	private String exames;
 
+	@Length(min = 0, max = 1000)
 	private String encaminhamento;
     
 	@NotEmpty(message = "Campo DATA é requerido!")
 	private String dataConsulta;
 	
+	@Length(min = 0, max = 1000, message = "O Campo Observação deve ter entre 0 e 1000 caracteres.")
 	private String observacao;
 
 	@JsonIgnore
